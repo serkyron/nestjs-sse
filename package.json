@@ -1,6 +1,6 @@
 {
   "name": "nestjs-sse",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Middleware for Nest.js to broadcast Server-Sent Events (SSE)",
   "main": "dist/index.js",
   "scripts": {
