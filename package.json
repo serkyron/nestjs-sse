@@ -7,6 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node_modules/.bin/tsc"
   },
+  "types": [
+    "src/*.d.ts"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/serkyron/nestjs-sse.git"
@@ -39,6 +42,7 @@
   "dependencies": {
     "@nestjs/common": "^6.8.3",
     "express": "^4.17.1",
+    "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.3"
   }
 }
