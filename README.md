@@ -13,17 +13,17 @@ Apply the middleware
     import {SSEMiddleware} from "nestjs-sse";  
       
     @Module({  
-	    imports: [],  
-	    controllers: [ConnectionController],  
-	    providers: [ConnectionService],  
-	    exports: [ConnectionService],  
+      imports: [],  
+      controllers: [ConnectionController],  
+      providers: [ConnectionService],  
+      exports: [ConnectionService],  
     })  
     export class ConnectionModule {  
-	    configure(consumer: MiddlewareConsumer) {  
-		    consumer  
-	            .apply(SSEMiddleware)  
-                .forRoutes(ConnectionController);  
-	    }  
+      configure(consumer: MiddlewareConsumer) {  
+        consumer  
+          .apply(SSEMiddleware)  
+          .forRoutes(ConnectionController);  
+      }  
     }
 
 Inside the controller
@@ -35,16 +35,16 @@ Inside the controller
       
     @Controller()  
     export class ConnectionController {  
-        constructor(private readonly connectionService: ConnectionService) {  
+      constructor(private readonly connectionService: ConnectionService) {  
       
-        }  
+      }  
       
-        @Get("vm/connection")  
-        list(@Res() res: Response) {  
-            res.sse(`data: ${JSON.stringify(this.connectionService.getAliveVMsData())}\n\n`);  
+      @Get("vm/connection")  
+      list(@Res() res: Response) {  
+        res.sse(`data: ${JSON.stringify(this.connectionService.getAliveVMsData())}\n\n`);  
       
-		    setInterval(() => {  
-				res.sse(`data: ${JSON.stringify(this.connectionService.getAliveVMsData())}\n\n`);  
-		    }, settings.MAX_HEART_BEAT_IDLE_MS);  
-	    }  
+        setInterval(() => {  
+          res.sse(`data: ${JSON.stringify(this.connectionService.getAliveVMsData())}\n\n`);  
+        }, settings.MAX_HEART_BEAT_IDLE_MS);  
+      }  
     }
