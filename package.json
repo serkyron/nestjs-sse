@@ -41,6 +41,7 @@
   },
   "dependencies": {
     "@nestjs/common": "^6.8.3",
+    "@types/express": "^4.17.4",
     "express": "^4.17.1",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^6.5.3"

@@ -11,7 +11,7 @@
     "sourceMap": false,
     "outDir": "dist",
     "baseUrl": "./src",
-    "declaration": false
+    "declaration": true
   },
   "lib": [
     "es2017",
