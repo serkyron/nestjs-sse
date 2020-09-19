@@ -1,5 +1,6 @@
-import { Response as ExpressResponse } from "express";
+import { OutgoingMessage } from "http";
 
-export interface Response extends ExpressResponse {
+export interface Response extends OutgoingMessage {
     sse(data: string): void;
+    status(code: number): void;
 }
