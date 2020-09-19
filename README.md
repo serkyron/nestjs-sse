@@ -1,7 +1,7 @@
 # Server-Sent Events (SSE) - Nest.js
 This package implements a middleware to broadcast SSE when using Nexs.js framework.
 
-**npm i -S nestjs-sse**
+**npm i nestjs-sse**
 
 ## Usage
 
