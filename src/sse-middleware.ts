@@ -1,10 +1,10 @@
 import { Injectable, NestMiddleware } from "@nestjs/common";
-import { Request } from "express";
+import { IncomingMessage } from "http";
 import { Response } from "./response";
 
 @Injectable()
 export class SSEMiddleware implements NestMiddleware {
-    public use(req: Request, res: Response, next: () => void) {
+    public use(req: IncomingMessage, res: Response, next: () => void) {
         req.socket.setKeepAlive(true);
         req.socket.setTimeout(0);
         res.setHeader("Content-Type", "text/event-stream");
